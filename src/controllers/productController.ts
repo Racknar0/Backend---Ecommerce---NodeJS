@@ -47,7 +47,8 @@ async function updateProductById(
   next: NextFunction
 ) {
   try {
-    const { id, title, price, thumbnail, description, code, stock } = req.body
+    const {  title, price, thumbnail, description, code, stock } = req.body
+    const { id } = req.params
     const data = await productService.updateProductById(id, {
       title,
       price,

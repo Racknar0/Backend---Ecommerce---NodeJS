@@ -59,7 +59,8 @@ async function getUserById(req: Request, res: Response, next: NextFunction) {
 
 async function updateUserById(req: Request, res: Response, next: NextFunction) {
   try {
-    const { id, name, address, phone } = req.body
+    const { name, address, phone } = req.body
+    const { id } = req.params
     const { filename } = req.file ? req.file : { filename: undefined }
     const user: UserTokenType = req['user']
     const data = await userService.updateUserById(

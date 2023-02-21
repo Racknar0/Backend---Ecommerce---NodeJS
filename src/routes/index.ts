@@ -47,7 +47,7 @@ router.get(
 )
 
 router.put(
-  '/users',
+  '/users/:id',
   uploadImage.single('photo'),
   getUserFromToken,
   checkAuth('user'),
@@ -71,7 +71,7 @@ router.get('/products', productController.getProducts)
 router.get('/products/:id', productController.getProductById)
 
 router.put(
-  '/products',
+  '/products/:id',
   getUserFromToken,
   checkAuth('admin'),
   productValidator.validateUpdate,
