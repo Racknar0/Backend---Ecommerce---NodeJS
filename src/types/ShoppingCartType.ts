@@ -15,4 +15,4 @@ export type ShoppingCartDataType = {
   products: ProductType[]
   user: UserProfileType
   status: shoppingCartStatusType
-}
+} 

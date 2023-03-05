@@ -20,6 +20,7 @@ export default class ShoppingCartRepository {
   }
 
   async save(obj: ShoppingCartDataType): Promise<ShoppingCartType> {
+    console.log('obj', obj)
     return this.dao.save(obj)
   }
 

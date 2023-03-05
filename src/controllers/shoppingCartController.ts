@@ -9,6 +9,7 @@ export async function createShoppingCart(
 ) {
   try {
     const user: UserTokenType = req['user']
+    console.log("The user is " + user)
     const data = await shoppingCartService.createShoppingCart(user)
     res.status(201).json({ data })
   } catch (error) {
@@ -36,7 +37,9 @@ export async function getShoppingCartById(
 ) {
   try {
     const { id } = req.params
+    console.log("The id is " + id)
     const user: UserTokenType = req['user']
+    console.log(req['user'])
     const data = await shoppingCartService.getShoppingCartById(id, user)
     res.json({ data })
   } catch (error) {

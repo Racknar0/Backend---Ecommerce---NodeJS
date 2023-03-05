@@ -2,12 +2,12 @@
   "name": "ecommerce",
   "version": "1.0.0",
   "description": "eCommerce Backend NodeJS",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "build": "tsc",
     "clean": "rimraf build",
     "dev": "ts-node-dev src/index.ts mode=development",
-    "start": "node build/src/index.js mode=production"
+    "start": "ts-node-dev src/index.ts mode=production"
   },
   "keywords": [],
   "author": "Jonathan Camilo Torres",
