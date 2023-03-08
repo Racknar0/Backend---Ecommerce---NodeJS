@@ -16,6 +16,7 @@ import HttpServer, { Server } from 'http'
 /* importart socket */
 import {initSocket} from './sockets/sockets'
 import { ClientToServerEvents, InterServerEvents, ServerToClientEvents, SocketData } from './types/TypesSocket'
+import path from 'path';
 
 if (config.API_CLUSTER && cluster.isPrimary) {
   const numCpus = os.cpus().length
@@ -38,7 +39,7 @@ if (config.API_CLUSTER && cluster.isPrimary) {
   app.use(cors())
   app.use(express.json())
   app.use(express.urlencoded({ extended: true }))
-  app.use(express.static(__dirname + '/public'));
+  app.use(express.static(path.join(__dirname, 'public')));
   app.use(
     morgan('combined', {
       stream: { write: (message) => logger.info(message.trim()) },
